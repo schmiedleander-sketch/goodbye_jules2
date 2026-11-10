@@ -1,0 +1,61 @@
+<Window
+    x:Class="DevPalette.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DevPalette Color Tool">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="DevPalette Color Tool" Style="{ThemeResource TitleLargeTextBlockStyle}" Margin="0,0,0,16"/>
+
+        <Grid Grid.Row="1" ColumnSpacing="24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Color Inputs -->
+            <StackPanel Grid.Column="0" Spacing="12">
+                <Border x:Name="ColorPreviewBox" Height="120" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"/>
+
+                <TextBlock Text="Red (0 - 255)"/>
+                <Slider x:Name="SliderR" Minimum="0" Maximum="255" Value="0" ValueChanged="OnColorChanged"/>
+
+                <TextBlock Text="Green (0 - 255)"/>
+                <Slider x:Name="SliderG" Minimum="0" Maximum="255" Value="120" ValueChanged="OnColorChanged"/>
+
+                <TextBlock Text="Blue (0 - 255)"/>
+                <Slider x:Name="SliderB" Minimum="0" Maximum="255" Value="212" ValueChanged="OnColorChanged"/>
+
+                <Button Content="Generate Harmonious Palette" HorizontalAlignment="Stretch" Click="OnGeneratePaletteClicked"/>
+            </StackPanel>
+
+            <!-- Formats & WCAG -->
+            <StackPanel Grid.Column="1" Spacing="16">
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Color Formats" FontWeight="SemiBold"/>
+                        <TextBox x:Name="TxtHex" Header="HEX" IsReadOnly="True"/>
+                        <TextBox x:Name="TxtRgb" Header="RGB" IsReadOnly="True"/>
+                        <TextBox x:Name="TxtHsl" Header="HSL" IsReadOnly="True"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="WCAG 2.1 Contrast Analysis" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="TxtContrastWhite" Text="Contrast against White (#FFFFFF): 0.00:1"/>
+                        <TextBlock x:Name="TxtContrastBlack" Text="Contrast against Black (#000000): 0.00:1"/>
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Text="Generated Harmony Swatches" FontWeight="SemiBold"/>
+                <StackPanel x:Name="SwatchesPanel" Orientation="Horizontal" Spacing="12"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

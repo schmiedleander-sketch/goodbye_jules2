@@ -1,0 +1,49 @@
+<Window
+    x:Class="NetworkSpeedPulse.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Network Speed Pulse">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="8" Margin="0,0,0,16">
+            <TextBlock Text="Network Speed Pulse" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="Measure latency and network interface statistics in real-time." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Test panel -->
+            <StackPanel Grid.Column="0" Spacing="16">
+                <TextBox x:Name="TxtHost" Header="Ping Target Host / IP" Text="1.1.1.1"/>
+                <Button Content="Start Ping Pulse" HorizontalAlignment="Stretch" Click="OnPingClicked"/>
+
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Latency Pulse" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="TxtLatency" Text="-- ms" Style="{ThemeResource DisplayLargeTextBlockStyle}"/>
+                        <TextBlock x:Name="TxtPacketLoss" Text="Status: Waiting for test" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Interface Details -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Active Network Interfaces" FontWeight="SemiBold"/>
+                    <ScrollViewer Height="300">
+                        <TextBlock x:Name="TxtInterfaceDetails" Text="Querying interfaces..." FontFamily="Consolas" TextWrapping="Wrap"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+<Window
+    x:Class="VoxelWorldBuilder.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Voxel World Builder - GACL BC4/BC5 Normal Map Conditioning">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="Voxel World Builder" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="Voxel terrain sandbox featuring GACL BC4 (Height) &amp; BC5 (Normal) compressed stream transforms." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="340"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Voxel Viewport -->
+            <Border Grid.Column="0" Background="#182026" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Voxel Chunks Streamed: 256 / 256" FontWeight="SemiBold" Foreground="#88FF88"/>
+                    <TextBlock Text="Active Biome: Mountainous Canyon (BC4 Elevation + BC5 Normals)" Foreground="#CCCCCC"/>
+                    <ProgressBar Value="100"/>
+                    <TextBlock Text="DirectStorage GPU decompression throughput: 14.8 GB/s" Foreground="#00D2FF"/>
+                </StackPanel>
+            </Border>
+
+            <!-- GACL BC4/BC5 Panel -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="GACL Surface Conditioning" FontWeight="SemiBold"/>
+                    <TextBlock Text="Elevation: BC4 (ZSTD_BC4 Shuffle)"/>
+                    <TextBlock Text="Normal Maps: BC5 (ZSTD_BC5 Shuffle)"/>
+                    <Button Content="Condition Voxel Terrain Atlases" HorizontalAlignment="Stretch" Click="OnConditionVoxelClicked"/>
+                    <TextBox x:Name="TxtVoxelLog" Header="Log" Height="200" AcceptsReturn="True" FontFamily="Consolas" IsReadOnly="True"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

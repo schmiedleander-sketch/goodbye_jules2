@@ -1,0 +1,27 @@
+<Window
+    x:Class="QuickLauncherTray.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Quick Launcher Tray">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="4" Margin="0,0,0,16">
+            <TextBlock Text="Quick Launcher Tray" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="One-click speed launcher for developer tools and utilities." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <GridView Grid.Row="1" SelectionMode="None">
+            <Button Content="Visual Studio" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+            <Button Content="Terminal" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+            <Button Content="Git GUI" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+            <Button Content="Calculator" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+            <Button Content="Paint" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+            <Button Content="File Explorer" Width="140" Height="80" Margin="4" Click="OnLaunchTool"/>
+        </GridView>
+    </Grid>
+</Window>

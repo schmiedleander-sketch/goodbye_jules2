@@ -1,0 +1,61 @@
+<Window
+    x:Class="MarkdownNotePad.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Markdown NotePad - Fluent Editor">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0">
+            <AppBarButton Icon="NewWindow" Label="New" Click="OnNewClicked"/>
+            <AppBarButton Icon="Save" Label="Save" Click="OnSaveClicked"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Bold" Label="Bold" Click="OnBoldClicked"/>
+            <AppBarButton Icon="Italic" Label="Italic" Click="OnItalicClicked"/>
+            <AppBarButton Icon="List" Label="Bullet" Click="OnBulletClicked"/>
+        </CommandBar>
+
+        <Grid Grid.Row="1" Margin="16" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Editor -->
+            <Border Grid.Column="0" Background="{ThemeResource LayerFillColorDefaultBrush}" CornerRadius="8" Padding="12" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="SOURCE (MARKDOWN)" FontWeight="SemiBold" Margin="0,0,0,8" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    <TextBox Grid.Row="1" x:Name="TxtEditor" AcceptsReturn="True" TextWrapping="Wrap" FontFamily="Consolas" TextChanged="OnEditorTextChanged"/>
+                </Grid>
+            </Border>
+
+            <!-- Live Preview -->
+            <Border Grid.Column="1" Background="{ThemeResource LayerFillColorDefaultBrush}" CornerRadius="8" Padding="12" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="LIVE PREVIEW" FontWeight="SemiBold" Margin="0,0,0,8" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel x:Name="PreviewPanel" Spacing="8"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Status -->
+        <Border Grid.Row="2" Background="{ThemeResource LayerFillColorAltBrush}" Padding="16,6">
+            <TextBlock x:Name="TxtStats" Text="Words: 0 | Lines: 0" Style="{ThemeResource CaptionTextBlockStyle}"/>
+        </Border>
+    </Grid>
+</Window>

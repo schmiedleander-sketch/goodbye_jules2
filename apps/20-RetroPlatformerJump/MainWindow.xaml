@@ -1,0 +1,49 @@
+<Window
+    x:Class="RetroPlatformerJump.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Retro Platformer Jump - GACL Runtime Asset Unshuffle">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="Retro Platformer Jump" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="Side-scroller platformer streaming GACL-conditioned assets via DirectStorage 1.4." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="340"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Stage Canvas -->
+            <Border Grid.Column="0" Background="#141824" CornerRadius="8">
+                <Canvas x:Name="StageCanvas">
+                    <TextBlock Canvas.Left="20" Canvas.Top="20" Text="STAGE: World 1-1" Foreground="#FFDD00" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Canvas.Left="20" Canvas.Top="45" Text="COINS: 42" Foreground="#FFFFFF" FontSize="14"/>
+                    <Rectangle Canvas.Left="50" Canvas.Top="260" Width="30" Height="40" Fill="#00CCFF"/>
+                    <Rectangle Canvas.Left="0" Canvas.Top="300" Width="550" Height="40" Fill="#338833"/>
+                </Canvas>
+            </Border>
+
+            <!-- GACL Asset Streamer -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Asset Conditioning &amp; Streaming" FontWeight="SemiBold"/>
+                    <TextBlock Text="GACL Space Curve: 16KB micro-tiles"/>
+                    <TextBlock Text="Transform ID: 0x05 (BC7 Split)"/>
+                    <Button Content="Trigger Stage Asset Swap" HorizontalAlignment="Stretch" Click="OnSwapStageClicked"/>
+                    <TextBox x:Name="TxtStageLog" Header="DirectStorage Streaming Log" Height="200" AcceptsReturn="True" FontFamily="Consolas" IsReadOnly="True"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <TextBlock Grid.Row="2" Text="DirectStorage GA unshuffle active | Player ready" Margin="0,8,0,0" Style="{ThemeResource CaptionTextBlockStyle}"/>
+    </Grid>
+</Window>

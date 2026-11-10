@@ -1,0 +1,45 @@
+<Window
+    x:Class="DungeonCrawlerGACL.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Dungeon Crawler - GACL BLER Texture Compression">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="Dungeon Crawler GACL" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="Procedural Roguelike using GACL Block-Level Entropy Reduction (BLER) for Sprite Atlases." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Map Viewport -->
+            <Border Grid.Column="0" Background="#111" CornerRadius="8" Padding="16">
+                <TextBlock x:Name="TxtDungeonMap" FontFamily="Consolas" FontSize="14" Foreground="#33FF33" Text="Loading dungeon level..."/>
+            </Border>
+
+            <!-- GACL Stats -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="GACL BLER Pipeline" FontWeight="SemiBold"/>
+                    <TextBlock Text="Format: BC1 (RGB 5:6:5 Endpoints)" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    <TextBlock x:Name="TxtOriginalSize" Text="Original Atlas: 4096 KB"/>
+                    <TextBlock x:Name="TxtCompressedSize" Text="Conditioned Atlas: 1720 KB (58% Savings)"/>
+                    <TextBlock x:Name="TxtPsnr" Text="Atlas PSNR: 44.1 dB (Visually Lossless)"/>
+                    <Button Content="Generate New Dungeon Level" HorizontalAlignment="Stretch" Click="OnNewDungeonClicked"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <TextBlock Grid.Row="2" x:Name="TxtStatus" Text="Level 1 | Hero HP: 100/100" Margin="0,8,0,0" Style="{ThemeResource CaptionTextBlockStyle}"/>
+    </Grid>
+</Window>

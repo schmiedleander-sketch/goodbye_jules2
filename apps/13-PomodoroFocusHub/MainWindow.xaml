@@ -1,0 +1,27 @@
+<Window
+    x:Class="PomodoroFocusHub.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Pomodoro Focus Hub">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="24">
+        <StackPanel Spacing="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Pomodoro Focus Hub" Style="{ThemeResource TitleLargeTextBlockStyle}" HorizontalAlignment="Center"/>
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="12" Padding="32" Width="350">
+                <StackPanel Spacing="16" HorizontalAlignment="Center">
+                    <TextBlock x:Name="TxtTimer" Text="25:00" FontSize="64" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtMode" Text="FOCUS SESSION #1" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
+                        <Button x:Name="BtnStart" Content="Start" Width="80" Click="OnStartClicked"/>
+                        <Button x:Name="BtnPause" Content="Pause" Width="80" Click="OnPauseClicked"/>
+                        <Button x:Name="BtnReset" Content="Reset" Width="80" Click="OnResetClicked"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <TextBlock x:Name="TxtCompleted" Text="Completed Sessions: 0" Style="{ThemeResource SubtitleTextBlockStyle}" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
