@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*"
+           Name="Windows App SDK Suite and GACL Games"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="Windows App SDK Community"
+           UpgradeCode="B9F74C78-751D-49AE-BE09-3221C390B752">
+
+    <Package InstallerVersion="500"
+             Compressed="yes"
+             InstallScope="perMachine"
+             Description="Installer for 20 Windows App SDK Applications and GACL Game Integrations" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="WindowsAppSDKSuite">
+        <Component Id="cmp_TaskManagerPlus" Guid="{328F5D74-33CC-50BD-8846-1DA2B6ECB99E}">
+          <File Id="fil_TaskManagerPlus" Source="$(var.SourceDir)\TaskManagerPlus\TaskManagerPlus.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_TaskManagerPlus"
+                      Directory="ProgramMenuDir"
+                      Name="Task Manager Plus"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_MarkdownNotePad" Guid="{54262B6B-5691-5EA1-9CA1-89B9B3F0D489}">
+          <File Id="fil_MarkdownNotePad" Source="$(var.SourceDir)\MarkdownNotePad\MarkdownNotePad.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_MarkdownNotePad"
+                      Directory="ProgramMenuDir"
+                      Name="Markdown NotePad"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_DevPalette" Guid="{E18792A3-103E-5C74-9C36-701715A953BA}">
+          <File Id="fil_DevPalette" Source="$(var.SourceDir)\DevPalette\DevPalette.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_DevPalette"
+                      Directory="ProgramMenuDir"
+                      Name="DevPalette Color Tool"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_FileChecksumValidator" Guid="{4D9A0E5C-EF56-5677-837D-1C0755BF9560}">
+          <File Id="fil_FileChecksumValidator" Source="$(var.SourceDir)\FileChecksumValidator\FileChecksumValidator.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_FileChecksumValidator"
+                      Directory="ProgramMenuDir"
+                      Name="File Checksum Validator"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_NetworkSpeedPulse" Guid="{10A0D567-3E77-59BB-9592-2EF1FE087DFF}">
+          <File Id="fil_NetworkSpeedPulse" Source="$(var.SourceDir)\NetworkSpeedPulse\NetworkSpeedPulse.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_NetworkSpeedPulse"
+                      Directory="ProgramMenuDir"
+                      Name="Network Speed Pulse"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_AudioWaveLab" Guid="{4DE0B1C6-291A-5BAB-96AD-26A4FE5F16E8}">
+          <File Id="fil_AudioWaveLab" Source="$(var.SourceDir)\AudioWaveLab\AudioWaveLab.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_AudioWaveLab"
+                      Directory="ProgramMenuDir"
+                      Name="Audio Wave Lab"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_JsonXmlForge" Guid="{F7C42ABB-B674-57F2-95D8-8F93CC910370}">
+          <File Id="fil_JsonXmlForge" Source="$(var.SourceDir)\JsonXmlForge\JsonXmlForge.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_JsonXmlForge"
+                      Directory="ProgramMenuDir"
+                      Name="JSON and XML Forge"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_SystemHealthSentinel" Guid="{9BC5C2A6-B5C7-573F-9068-80F99D50EF96}">
+          <File Id="fil_SystemHealthSentinel" Source="$(var.SourceDir)\SystemHealthSentinel\SystemHealthSentinel.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_SystemHealthSentinel"
+                      Directory="ProgramMenuDir"
+                      Name="System Health Sentinel"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_ClipboardVault" Guid="{7C424179-E6CB-5BB0-BA11-AF49773C96B8}">
+          <File Id="fil_ClipboardVault" Source="$(var.SourceDir)\ClipboardVault\ClipboardVault.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_ClipboardVault"
+                      Directory="ProgramMenuDir"
+                      Name="Clipboard Vault"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_BatchRenamePro" Guid="{4D0C7E0C-845F-5967-AC8B-4B5049553050}">
+          <File Id="fil_BatchRenamePro" Source="$(var.SourceDir)\BatchRenamePro\BatchRenamePro.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_BatchRenamePro"
+                      Directory="ProgramMenuDir"
+                      Name="Batch Rename Pro"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_ImageResizerFluid" Guid="{E015ECAA-E97C-5CF0-8DA8-1111D615573A}">
+          <File Id="fil_ImageResizerFluid" Source="$(var.SourceDir)\ImageResizerFluid\ImageResizerFluid.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_ImageResizerFluid"
+                      Directory="ProgramMenuDir"
+                      Name="Image Resizer Fluid"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_RestApiClient" Guid="{BAF6AF0A-A41E-587E-8E2C-7206B862B173}">
+          <File Id="fil_RestApiClient" Source="$(var.SourceDir)\RestApiClient\RestApiClient.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_RestApiClient"
+                      Directory="ProgramMenuDir"
+                      Name="REST API Client"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_PomodoroFocusHub" Guid="{3C35C31F-6A27-5384-98D2-FF86BA307A7F}">
+          <File Id="fil_PomodoroFocusHub" Source="$(var.SourceDir)\PomodoroFocusHub\PomodoroFocusHub.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_PomodoroFocusHub"
+                      Directory="ProgramMenuDir"
+                      Name="Pomodoro Focus Hub"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_QuickLauncherTray" Guid="{E007EA5F-D586-5350-908A-B54EEAB34DDC}">
+          <File Id="fil_QuickLauncherTray" Source="$(var.SourceDir)\QuickLauncherTray\QuickLauncherTray.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_QuickLauncherTray"
+                      Directory="ProgramMenuDir"
+                      Name="Quick Launcher Tray"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_GitRepositoryExplorer" Guid="{096EB95A-8304-50ED-9FC9-8F3ED4581DCF}">
+          <File Id="fil_GitRepositoryExplorer" Source="$(var.SourceDir)\GitRepositoryExplorer\GitRepositoryExplorer.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_GitRepositoryExplorer"
+                      Directory="ProgramMenuDir"
+                      Name="Git Repository Explorer"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_CyberRacer2D" Guid="{5541169F-0034-5447-A4F6-5F1D581792E3}">
+          <File Id="fil_CyberRacer2D" Source="$(var.SourceDir)\CyberRacer2D\CyberRacer2D.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_CyberRacer2D"
+                      Directory="ProgramMenuDir"
+                      Name="Cyber Racer 2D"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_DungeonCrawlerGACL" Guid="{252A200C-DF87-5992-9E7F-C4FA9DB81781}">
+          <File Id="fil_DungeonCrawlerGACL" Source="$(var.SourceDir)\DungeonCrawlerGACL\DungeonCrawlerGACL.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_DungeonCrawlerGACL"
+                      Directory="ProgramMenuDir"
+                      Name="Dungeon Crawler GACL"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_SpaceAsteroidsBattle" Guid="{C801F872-9205-5CA8-AB16-65F50EA344FF}">
+          <File Id="fil_SpaceAsteroidsBattle" Source="$(var.SourceDir)\SpaceAsteroidsBattle\SpaceAsteroidsBattle.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_SpaceAsteroidsBattle"
+                      Directory="ProgramMenuDir"
+                      Name="Space Asteroids Battle"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_VoxelWorldBuilder" Guid="{8592E7F5-CA5B-55F0-BC4F-69EDB64A7FFF}">
+          <File Id="fil_VoxelWorldBuilder" Source="$(var.SourceDir)\VoxelWorldBuilder\VoxelWorldBuilder.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_VoxelWorldBuilder"
+                      Directory="ProgramMenuDir"
+                      Name="Voxel World Builder"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        <Component Id="cmp_RetroPlatformerJump" Guid="{2CBB7812-2B24-58B6-87E5-4D21F9B23A56}">
+          <File Id="fil_RetroPlatformerJump" Source="$(var.SourceDir)\RetroPlatformerJump\RetroPlatformerJump.exe" KeyPath="yes">
+            <Shortcut Id="startMenuShortcut_RetroPlatformerJump"
+                      Directory="ProgramMenuDir"
+                      Name="Retro Platformer Jump"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Advertise="yes" />
+          </File>
+        </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuDir" Name="Windows App SDK Suite">
+          <Component Id="cmp_ProgramMenuDir" Guid="D2A68153-61B7-4D6C-A63F-5FE015B78263">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\WindowsAppSDKSuite" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="Windows App SDK Suite (20 Applications)" Level="1">
+      <ComponentRef Id="cmp_TaskManagerPlus" />
+      <ComponentRef Id="cmp_MarkdownNotePad" />
+      <ComponentRef Id="cmp_DevPalette" />
+      <ComponentRef Id="cmp_FileChecksumValidator" />
+      <ComponentRef Id="cmp_NetworkSpeedPulse" />
+      <ComponentRef Id="cmp_AudioWaveLab" />
+      <ComponentRef Id="cmp_JsonXmlForge" />
+      <ComponentRef Id="cmp_SystemHealthSentinel" />
+      <ComponentRef Id="cmp_ClipboardVault" />
+      <ComponentRef Id="cmp_BatchRenamePro" />
+      <ComponentRef Id="cmp_ImageResizerFluid" />
+      <ComponentRef Id="cmp_RestApiClient" />
+      <ComponentRef Id="cmp_PomodoroFocusHub" />
+      <ComponentRef Id="cmp_QuickLauncherTray" />
+      <ComponentRef Id="cmp_GitRepositoryExplorer" />
+      <ComponentRef Id="cmp_CyberRacer2D" />
+      <ComponentRef Id="cmp_DungeonCrawlerGACL" />
+      <ComponentRef Id="cmp_SpaceAsteroidsBattle" />
+      <ComponentRef Id="cmp_VoxelWorldBuilder" />
+      <ComponentRef Id="cmp_RetroPlatformerJump" />
+      <ComponentRef Id="cmp_ProgramMenuDir" />
+    </Feature>
+  </Product>
+</Wix>

@@ -77,3 +77,30 @@ dotnet run
 cd apps/16-CyberRacer2D
 dotnet run
 ```
+
+---
+
+## Generating .EXE and .MSI Installers
+
+### 1. Generating .EXE Executables
+To build and publish standalone `.exe` binaries for all 20 applications:
+```powershell
+.\publish-all.ps1 -Configuration Release -OutputDir artifacts/publish
+```
+Or via Windows Command Prompt:
+```cmd
+build-all.cmd
+```
+Each application will be compiled into its own folder under `artifacts/publish/<AppName>/<AppName>.exe` with all necessary runtime dependencies and native bindings.
+
+### 2. Generating the .MSI Windows Installer
+The repository includes a WiX Toolset project (`installer/WindowsAppSDKSuiteInstaller.wixproj`) configured to package all 20 application executables, Start Menu shortcuts, and registry uninstall keys into a single Windows Installer (`.msi`).
+
+To generate the `.msi` package:
+```powershell
+.\installer\build-msi.ps1
+```
+The resulting installer package will be output to:
+```
+artifacts/installer/WindowsAppSDKSuiteSetup.msi
+```

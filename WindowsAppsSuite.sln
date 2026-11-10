@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelWorldBuilder", "apps\1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroPlatformerJump", "apps\20-RetroPlatformerJump\RetroPlatformerJump.csproj", "{75115185-B012-5F74-A4D4-1578F6A7AF37}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-E449745B6376}") = "WindowsAppSDKSuiteInstaller", "installer\WindowsAppSDKSuiteInstaller.wixproj", "{47F35F4C-3B43-4C10-9FD6-FE1A8B28965E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,4 +131,6 @@ Global
 		{75115185-B012-5F74-A4D4-1578F6A7AF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75115185-B012-5F74-A4D4-1578F6A7AF37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-EndGlobal
+EndProject("{930C7802-8A8C-48F9-8165-E449745B6376}") = "WindowsAppSDKSuiteInstaller", "installer\WindowsAppSDKSuiteInstaller.wixproj", "{47F35F4C-3B43-4C10-9FD6-FE1A8B28965E}"
+EndProject
+Global
