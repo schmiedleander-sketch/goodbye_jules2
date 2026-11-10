@@ -1,0 +1,31 @@
+<Window
+    x:Class="BatchRenamePro.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Batch Rename Pro">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Batch Rename Pro" Style="{ThemeResource TitleLargeTextBlockStyle}" Margin="0,0,0,16"/>
+
+        <Grid Grid.Row="1" ColumnSpacing="12" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="TxtPrefix" Header="Prefix" Text="Item_"/>
+            <TextBox Grid.Column="1" x:Name="TxtSuffix" Header="Suffix" Text="_v1"/>
+            <TextBox Grid.Column="2" x:Name="TxtStartNum" Header="Start Index" Text="1"/>
+            <Button Grid.Column="3" Content="Preview Rename" VerticalAlignment="Bottom" Click="OnPreviewClicked"/>
+        </Grid>
+
+        <ListView Grid.Row="2" x:Name="PreviewList"/>
+    </Grid>
+</Window>

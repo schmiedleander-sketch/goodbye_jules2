@@ -1,0 +1,48 @@
+<Window
+    x:Class="SystemHealthSentinel.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="System Health Sentinel">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="8" Margin="0,0,0,16">
+            <TextBlock Text="System Health Sentinel" Style="{ThemeResource TitleLargeTextBlockStyle}"/>
+            <TextBlock Text="Host system diagnostics, drive capacity, OS kernel info, and runtime performance." Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- OS & System Info -->
+            <Border Grid.Column="0" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="System Profile" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="TxtOSVersion" Text="OS: Loading..."/>
+                    <TextBlock x:Name="TxtProcessorCount" Text="Logical Processors: Loading..."/>
+                    <TextBlock x:Name="TxtMachineName" Text="Device Name: Loading..."/>
+                    <TextBlock x:Name="TxtUptime" Text="System Uptime: Loading..."/>
+                    <TextBlock x:Name="TxtClrVersion" Text=".NET Runtime: Loading..."/>
+                    <Button Content="Refresh Hardware Stats" Click="OnRefreshClicked" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Drives Info -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Storage Drive Health &amp; Volumes" FontWeight="SemiBold"/>
+                    <ScrollViewer Height="300">
+                        <TextBlock x:Name="TxtDrives" Text="Loading drives..." FontFamily="Consolas"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

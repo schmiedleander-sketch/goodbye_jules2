@@ -1,0 +1,7 @@
+## Build Outputs
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.lock
