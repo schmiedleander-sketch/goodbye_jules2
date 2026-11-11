@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="FileSplitJoin" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="70d5333e-acb8-5aef-92d4-1d25f1db2bc1">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="FileSplitJoin">
+          <Component Id="MainExecutable" Guid="45485387-9514-5748-89fa-d0fffde58ac4">
+            <File Id="FileSplitJoinExe" Source="FileSplitJoin.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="FileSplitJoin" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

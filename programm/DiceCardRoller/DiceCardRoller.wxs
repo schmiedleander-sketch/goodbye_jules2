@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="DiceCardRoller" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="eb4d0261-af21-51d7-80cd-ee9aa10116a8">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="DiceCardRoller">
+          <Component Id="MainExecutable" Guid="c55fb54a-ea74-5fd3-9fa8-581f1a288db2">
+            <File Id="DiceCardRollerExe" Source="DiceCardRoller.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="DiceCardRoller" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

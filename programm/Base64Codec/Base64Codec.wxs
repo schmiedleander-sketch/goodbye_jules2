@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Base64Codec" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="c7ea26c0-efda-59ba-b986-55a8f0c89a69">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="Base64Codec">
+          <Component Id="MainExecutable" Guid="a1dbca18-367e-58f7-b22c-296fe0b171f8">
+            <File Id="Base64CodecExe" Source="Base64Codec.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="Base64Codec" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

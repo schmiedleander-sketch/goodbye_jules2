@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="NetPingScanner" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="d656e3ed-126b-5ae5-94ec-db8766026245">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="NetPingScanner">
+          <Component Id="MainExecutable" Guid="7832490a-561b-5e41-a18e-18531756bb59">
+            <File Id="NetPingScannerExe" Source="NetPingScanner.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="NetPingScanner" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

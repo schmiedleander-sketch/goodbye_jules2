@@ -1,0 +1,14 @@
+bin/
+obj/
+**/bin/**
+**/obj/**
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+.idea/
+*.pdb
+**/bin_win_x64/*.pdb
+*.exe
+*.msi

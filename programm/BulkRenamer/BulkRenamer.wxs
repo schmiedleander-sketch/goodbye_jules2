@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="BulkRenamer" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="f74d659a-5fd5-5b38-b4e9-aa1b0dc86c03">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="BulkRenamer">
+          <Component Id="MainExecutable" Guid="53c0c0e0-05ee-5b14-b3ed-be6211454aab">
+            <File Id="BulkRenamerExe" Source="BulkRenamer.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="BulkRenamer" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="TextAdventure" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="38c7d116-d956-5f68-9bca-afbef71701e7">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="TextAdventure">
+          <Component Id="MainExecutable" Guid="984c4fc7-5a99-59e9-9a66-18a6a49cb0bf">
+            <File Id="TextAdventureExe" Source="TextAdventure.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="TextAdventure" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

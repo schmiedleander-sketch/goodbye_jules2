@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="FileShredder" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="fada4a2c-81a5-5ffe-9275-7881883f6a41">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="FileShredder">
+          <Component Id="MainExecutable" Guid="2ab91857-aa9a-5fff-9b97-42c576ba83e5">
+            <File Id="FileShredderExe" Source="FileShredder.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="FileShredder" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

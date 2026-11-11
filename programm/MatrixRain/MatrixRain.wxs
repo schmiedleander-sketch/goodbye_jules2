@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="MatrixRain" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="2e50b349-df90-5322-8335-4bbf5666d654">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="MatrixRain">
+          <Component Id="MainExecutable" Guid="eb737c64-dc41-5832-b383-d22050274fd7">
+            <File Id="MatrixRainExe" Source="MatrixRain.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="MatrixRain" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>
