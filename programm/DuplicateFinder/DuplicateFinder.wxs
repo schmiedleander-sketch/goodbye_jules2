@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="DuplicateFinder" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="96b700c9-e51c-56ca-93fe-f672b0931696">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="DuplicateFinder">
+          <Component Id="MainExecutable" Guid="0414adab-45cd-5b17-a1f4-c7c2362f25f0">
+            <File Id="DuplicateFinderExe" Source="DuplicateFinder.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="DuplicateFinder" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>

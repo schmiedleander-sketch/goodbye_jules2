@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="JsonYamlConverter" Language="1033" Version="1.0.0.0" Manufacturer="WindowsAppSuite" UpgradeCode="a8b404ab-b83c-5488-96f5-ddaffda471af">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="JsonYamlConverter">
+          <Component Id="MainExecutable" Guid="435a576a-95b1-533b-91a8-143c8b62bd36">
+            <File Id="JsonYamlConverterExe" Source="JsonYamlConverter.exe" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="JsonYamlConverter" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+  </Product>
+</Wix>
