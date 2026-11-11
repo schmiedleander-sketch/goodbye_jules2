@@ -1,0 +1,218 @@
+{
+  "sdk_version": "2.0.4",
+  "engine_independent": true,
+  "requires_unreal_engine": false,
+  "architecture": "x86_64-windows",
+  "mods": [
+    {
+      "id": "mcd2_god_mode",
+      "name": "God Mode & Emergency Aegis",
+      "dll": "mods/01_god_mode.dll",
+      "enabled": true,
+      "config": {
+        "infinite_health": true,
+        "shield_auto_regen": true,
+        "nullify_fall_damage": true
+      }
+    },
+    {
+      "id": "mcd2_infinite_arrows",
+      "name": "Infinite Arrows & Quiver Refill",
+      "dll": "mods/02_infinite_arrows.dll",
+      "enabled": true,
+      "config": {
+        "max_quiver_size": 999,
+        "infinite_special_arrows": true
+      }
+    },
+    {
+      "id": "mcd2_speed_demon",
+      "name": "Speed Demon Overdrive",
+      "dll": "mods/03_speed_demon.dll",
+      "enabled": true,
+      "config": {
+        "movement_speed_multiplier": 2.25,
+        "attack_speed_multiplier": 2.50
+      }
+    },
+    {
+      "id": "mcd2_emerald_multiplier",
+      "name": "Emerald & Gold Multiplier",
+      "dll": "mods/04_emerald_multiplier.dll",
+      "enabled": true,
+      "config": {
+        "multiplier": 10
+      }
+    },
+    {
+      "id": "mcd2_custom_fov_camera",
+      "name": "Enhanced Camera & Custom FOV",
+      "dll": "mods/05_custom_fov_camera.dll",
+      "enabled": true,
+      "config": {
+        "fov": 95.0,
+        "zoom_distance": 1800.0,
+        "pitch_angle": -55.0,
+        "yaw_angle": 45.0,
+        "free_cam": false
+      }
+    },
+    {
+      "id": "mcd2_one_hit_kill",
+      "name": "One-Hit Kill & Armor Pierce",
+      "dll": "mods/06_one_hit_kill.dll",
+      "enabled": true,
+      "config": {
+        "damage_override": 9999999.0,
+        "guaranteed_crit": true
+      }
+    },
+    {
+      "id": "mcd2_instant_cooldown",
+      "name": "Instant Artifact & Potion Cooldown",
+      "dll": "mods/07_instant_cooldown.dll",
+      "enabled": true,
+      "config": {
+        "artifact_cooldown": 0.0,
+        "potion_cooldown": 0.0
+      }
+    },
+    {
+      "id": "mcd2_auto_salvage",
+      "name": "Smart Auto-Salvage Utility",
+      "dll": "mods/08_auto_salvage.dll",
+      "enabled": true,
+      "config": {
+        "min_rarity_to_keep": 2,
+        "auto_salvage_commons": true,
+        "auto_salvage_rares": false
+      }
+    },
+    {
+      "id": "mcd2_item_spawner",
+      "name": "In-Game Item & Gear Spawner",
+      "dll": "mods/09_item_spawner.dll",
+      "enabled": true,
+      "config": {
+        "default_power_level": 250,
+        "auto_gilded": true
+      }
+    },
+    {
+      "id": "mcd2_enemy_radar",
+      "name": "Tactical Enemy Radar & ESP",
+      "dll": "mods/10_enemy_radar.dll",
+      "enabled": true,
+      "config": {
+        "max_radar_distance": 1500.0,
+        "alert_on_enchanted": true,
+        "boss_pinpoint": true
+      }
+    },
+    {
+      "id": "mcd2_enchantment_reroller",
+      "name": "Free Enchantment Reroller",
+      "dll": "mods/11_enchantment_reroller.dll",
+      "enabled": true,
+      "config": {
+        "gold_cost": 0,
+        "guaranteed_tier": 3
+      }
+    },
+    {
+      "id": "mcd2_xp_booster",
+      "name": "XP & Leveling Progression Booster",
+      "dll": "mods/12_xp_booster.dll",
+      "enabled": true,
+      "config": {
+        "xp_multiplier": 5.0
+      }
+    },
+    {
+      "id": "mcd2_no_clip_ghost",
+      "name": "Ghost Walk & No Clip",
+      "dll": "mods/13_no_clip_ghost.dll",
+      "enabled": true,
+      "config": {
+        "collision_disabled": true,
+        "flight_mode": true
+      }
+    },
+    {
+      "id": "mcd2_boss_health_bar",
+      "name": "Boss Health Bar & Phase Overlay",
+      "dll": "mods/14_boss_health_bar.dll",
+      "enabled": true,
+      "config": {
+        "show_hp_percent": true,
+        "show_phase_breakdown": true
+      }
+    },
+    {
+      "id": "mcd2_custom_loot_filter",
+      "name": "Custom Loot Filter & Beam Highlighter",
+      "dll": "mods/15_custom_loot_filter.dll",
+      "enabled": true,
+      "config": {
+        "highlight_uniques": true,
+        "highlight_gilded": true,
+        "auto_pickup_emeralds": true,
+        "vacuum_radius": 500.0
+      }
+    },
+    {
+      "id": "mcd2_pet_enhancer",
+      "name": "Companion & Pet Master Overhaul",
+      "dll": "mods/16_pet_enhancer.dll",
+      "enabled": true,
+      "config": {
+        "pet_damage_multiplier": 3.0,
+        "pet_health_multiplier": 4.0,
+        "max_active_pets": 10
+      }
+    },
+    {
+      "id": "mcd2_weather_time_override",
+      "name": "Weather & Atmosphere Controller",
+      "dll": "mods/17_weather_time_override.dll",
+      "enabled": true,
+      "config": {
+        "weather_type": 0,
+        "time_of_day": 12.0,
+        "disable_fog": true
+      }
+    },
+    {
+      "id": "mcd2_multiplayer_sync_plus",
+      "name": "Multiplayer Co-Op Sync Plus",
+      "dll": "mods/18_multiplayer_sync_plus.dll",
+      "enabled": true,
+      "config": {
+        "revive_radius_multiplier": 3.0,
+        "network_tick_rate": 60,
+        "enable_loot_instancing": true
+      }
+    },
+    {
+      "id": "mcd2_infinite_lives",
+      "name": "Infinite Lives & Defeat Immunity",
+      "dll": "mods/19_infinite_lives.dll",
+      "enabled": true,
+      "config": {
+        "locked_lives_count": 4,
+        "defeat_screen_disabled": true
+      }
+    },
+    {
+      "id": "mcd2_damage_meter_hud",
+      "name": "Real-time DPS & Combat Meter HUD",
+      "dll": "mods/20_damage_meter_hud.dll",
+      "enabled": true,
+      "config": {
+        "show_dps": true,
+        "show_burst": true,
+        "track_party_members": true
+      }
+    }
+  ]
+}

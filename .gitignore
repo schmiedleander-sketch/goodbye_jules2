@@ -1,0 +1,4 @@
+# Build artifacts
+tests/test_pe_dlls
+dist/
+*.log
